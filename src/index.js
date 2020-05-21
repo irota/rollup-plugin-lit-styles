@@ -63,11 +63,8 @@ export default function litStyles(options = {}) {
                 }
 
                 // Generate the JS module
-                const litElementModule = await this.resolve(`lit-element`);
-                return `
-                    import { css } from '${litElementModule.id.replace(/\\/g, `\\\\`)}';
-                    export default css\`${styles}\`
-                `;
+                
+                return `export default \'${styles}\' `;
             }
 
             return null;
